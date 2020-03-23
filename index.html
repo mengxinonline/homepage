@@ -1,0 +1,230 @@
+
+<!DOCTYPE html>
+<html lang="zh-cn">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, viewport-fit=cover" />
+				<title>NFLSOJ - Nanjing Foreign Language School Algorithms Club</title>
+
+		<!-- Bootstrap core CSS -->
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha256-L/W5Wfqfa0sdBNIKN9cG6QA5F2qx4qICmU2VgLruv9Y=" crossorigin="anonymous" />
+
+		<!-- Glyphicons from bootstrap 3 -->
+		<link type="text/css" rel="stylesheet" href="https://acm.nflsoj.com/css/glyphicon.css?version=1582435459" />
+		<link type="text/css" rel="stylesheet" href="https://acm.nflsoj.com/dist/nflsoj.styles.css?version=1582435715" />
+					<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+			<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/js/bootstrap.bundle.min.js" integrity="sha256-OUFW7hFO0/r5aEGTQOz9F/aXQOt+TwqI1Z4fbVvww04=" crossorigin="anonymous"></script>
+
+			<script src="https://cdnjs.cloudflare.com/ajax/libs/react/16.12.0/umd/react.production.min.js" integrity="sha256-Ef0vObdWpkMAnxp39TYSLVS/vVUokDE8CDFnx7tjY6U=" crossorigin="anonymous"></script>
+			<script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/16.12.0/umd/react-dom.production.min.js" integrity="sha256-p2yuFdE8hNZsQ31Qk+s8N+Me2fL5cc6NKXOC0U9uGww=" crossorigin="anonymous"></script>
+			<script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/16.12.0/umd/react-dom-server.browser.production.min.js" integrity="sha256-WniIhLqiSx7fyeekjzz9dwHU/q43XQxhHDe/J+iZeZg=" crossorigin="anonymous"></script>
+
+			<script src="https://cdnjs.cloudflare.com/ajax/libs/reactstrap/8.4.1/reactstrap.full.min.js" integrity="sha256-IoAqyRcr04nVAHR2NpJNrq1p+W8FeyToS/Ulx6nxMg0=" crossorigin="anonymous"></script>
+			<script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.15/lodash.min.js" integrity="sha256-VeNaFBVDhoX3H+gJ37DpT/nTuZTdjYro9yBruHjVmoQ=" crossorigin="anonymous"></script>
+			<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.2/axios.min.js" integrity="sha256-T/f7Sju1ZfNNfBh7skWn0idlCBcI3RwdLSS4/I7NQKQ=" crossorigin="anonymous"></script>
+			<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment-with-locales.min.js"></script>
+		
+		<!-- jQuery autosize -->
+		<script src="https://acm.nflsoj.com/js/jquery.autosize.min.js?version=1582435459"></script>
+		<script type="text/javascript">
+			// See user.ts.
+			var OJUser = {
+							name: null,
+				email: null,
+				group: ""
+						};
+
+			$(function() {
+				$('textarea').autosize();
+			});
+
+			var before_window_unload_message = null;
+			$(window).on('beforeunload', function() {
+				if (before_window_unload_message !== null) {
+					return before_window_unload_message;
+				}
+			});
+
+			function getBlogUrl(username, path) {
+				var format = "https:\/\/acm.nflsoj.com\/blog\/{user}{path}";
+				return format.replace("{user}", username.replace('_', '-').toLowerCase()).replace("{path}", path);
+			}
+		</script>
+
+		<script src="https://acm.nflsoj.com/dist/nflsoj.bundle.js?version=1582435715"></script>
+		<!-- jQuery modal -->
+		<script src="https://acm.nflsoj.com/js/jquery.modal.js?version=1582435459"></script>
+		<!-- jQuery tag canvas -->
+		
+		<!-- LAB -->
+		<script src="https://acm.nflsoj.com/js/LAB.min.js?version=1582435459"></script>
+		<!-- NFLSOJ ico -->
+		<link rel="apple-touch-icon" sizes="60x60" href="https://acm.nflsoj.com/pictures/apple-touch-icon-60x60.png">
+		<link rel="apple-touch-icon" sizes="76x76" href="https://acm.nflsoj.com/pictures/apple-touch-icon-76x76.png">
+		<link rel="apple-touch-icon" sizes="120x120" href="https://acm.nflsoj.com/pictures/apple-touch-icon-120x120.png">
+		<link rel="apple-touch-icon" sizes="152x152" href="https://acm.nflsoj.com/pictures/apple-touch-icon-152x152.png">
+		<link rel="apple-touch-icon" sizes="180x180" href="https://acm.nflsoj.com/pictures/apple-touch-icon-180x180.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="https://acm.nflsoj.com/pictures/AlgoNFLS-32x32.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="https://acm.nflsoj.com/pictures/AlgoNFLS-16x16.png">
+		<link rel="manifest" href="https://acm.nflsoj.com/resources/site.webmanifest">
+		<link rel="mask-icon" href="https://acm.nflsoj.com/pictures/safari-pinned-tab.svg" color="#5bbad5">
+		<link rel="shortcut icon" href="https://acm.nflsoj.com/pictures/AlgoNFLS.ico">
+		<meta name="apple-mobile-web-app-title" content="NFLSOJ">
+		<meta name="application-name" content="NFLSOJ">
+		<meta name="msapplication-TileColor" content="#721d1a">
+		<meta name="msapplication-config" content="https://acm.nflsoj.com/resources/browserconfig.xml">
+		<meta name="theme-color" content="#ffffff">
+
+		<!-- OpenSearch -->
+		<link rel="search" type="application/opensearchdescription+xml" title="NFLSOJ" href="https://acm.nflsoj.com/resources/opensearch.xml" />
+
+		
+		
+		<!-- MD5 -->
+		<script src="https://acm.nflsoj.com/js/md5.min.js?version=1582435459"></script>
+		
+		
+		
+		
+		
+		
+		
+			</head>
+	<body role="document">
+				<header class="navbar navbar-expand-lg navbar-light bg-light fixed-top" role="banner">
+	<div class="container">
+		<a class="navbar-brand mb-0 h1" href="https://acm.nflsoj.com">NFLSOJ</a>
+		<button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="navbar-collapse collapse">
+			<form id="form-search-problems" class="order-2 form-inline mt-2 mt-lg-0" method="get" action="https://acm.nflsoj.com/search">
+				<div class="input-group">
+					<input type="text" class="form-control" name="search" placeholder="搜索或跳转到…" aria-describedby="button-submit-search-problems" />
+					<div class="input-group-append">
+						<button type="submit" class="btn btn-primary" id="button-submit-search-problems">
+							<span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+							<span class="sr-only">搜索</span>
+						</button>
+					</div>
+				</div>
+			</form>
+			<ul class="navbar-nav order-1 ml-0 ml-lg-2 mr-auto">
+									<li class="nav-item mr-lg-3"><a class="nav-link" href="/problems">
+											<span class="glyphicon glyphicon-list"></span>
+										题库</a></li>
+									<li class="nav-item mr-lg-3"><a class="nav-link" href="/contests">
+											<span class="glyphicon glyphicon-stats"></span>
+										比赛</a></li>
+									<li class="nav-item mr-lg-3"><a class="nav-link" href="/submissions">
+											<span class="glyphicon glyphicon-upload"></span>
+										提交记录</a></li>
+									<li class="nav-item mr-lg-3"><a class="nav-link" href="/hacks">
+											<span class="glyphicon glyphicon-exclamation-sign"></span>
+										Hack</a></li>
+									<li class="nav-item mr-lg-3"><a class="nav-link" href="/blogs">
+											<span class="glyphicon glyphicon-edit"></span>
+										博客</a></li>
+									<li class="nav-item mr-lg-3"><a class="nav-link" href="/faq">
+											<span class="glyphicon glyphicon-question-sign"></span>
+										帮助</a></li>
+							</ul>
+			<ul class="navbar-nav order-3">
+							<li class="nav-item">
+					<a class="btn btn-outline-secondary ml-0 ml-lg-3 mt-2 mt-lg-0" role="button" href="https://acm.nflsoj.com/login"><span class="glyphicon glyphicon-log-in"></span> 登录</a>
+				</li>
+				<li class="nav-item">
+					<a class="btn btn-outline-primary ml-0 ml-lg-3 my-2 my-lg-0" href="https://acm.nflsoj.com/register"><span class="glyphicon glyphicon-chevron-right"></span> 注册</a>
+				</li>
+						</ul>
+		</div><!--/.nav-collapse -->
+	</div>
+</header>
+				<div class="container" role="main">
+			<div class="uoj-content">
+<div class="card">
+	<div class="card-body">
+		<div class="row">
+			<div class="col-12 col-md-9 order-2 order-md-1">
+				<table class="table">
+					<thead>
+						<tr>
+							<th style="width:60%">公告</th>
+							<th style="width:20%"></th>
+							<th style="width:20%"></th>
+						</tr>
+					</thead>
+				  	<tbody>
+																						<tr>
+							<td><a href="/blog/279">搜索功能的更新</a></td>
+							<td>by <span class="uoj-username" data-rating="1547" data-link="true">TRCYX</span></td>
+							<td><small>2019-05-08 01:28:57</small></td>
+						</tr>
+																	<tr>
+							<td><a href="/blog/244">征集模板题</a></td>
+							<td>by <span class="uoj-username" data-rating="1985" data-link="true">eeeeeericKKK</span></td>
+							<td><small>2018-12-15 23:29:13</small></td>
+						</tr>
+																	<tr>
+							<td><a href="/blog/338">NFLSPC #2 题解合集</a></td>
+							<td>by <span class="uoj-username" data-rating="1967" data-link="true">wzy</span></td>
+							<td><small>2019-11-29 17:01:03</small></td>
+						</tr>
+																	<tr>
+							<td><a href="/blog/307">NFLSOJ 题目 problem.conf 设置简要说明</a></td>
+							<td>by <span class="uoj-username" data-rating="1967" data-link="true">wzy</span></td>
+							<td><small>2019-11-08 19:46:38</small></td>
+						</tr>
+																	<tr>
+							<td><a href="/blog/268">蝶梦 题解</a></td>
+							<td>by <span class="uoj-username" data-rating="1637" data-link="true">skyline</span></td>
+							<td><small>2019-03-31 12:34:28</small></td>
+						</tr>
+																<tr><td class="text-right" colspan="233"><a href="/announcements">所有公告……</a></td></tr>
+					</tbody>
+				</table>
+			</div>
+			<div id="div-nflsoj-logo-img" class="col-12 col-md-3 order-1 order-md-2">
+				<img class="media-object img-thumbnail" src="/pictures/AlgoNFLS.png" alt="NFLSOJ logo" />
+			</div>
+			<style>
+			@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) and (min-width: 768px) {
+				#div-nflsoj-logo-img {
+					max-height: 20rem;
+				}
+			}
+			</style>
+		</div>
+	</div>
+</div>
+<div class="mt-4">
+	<h3>比赛排行榜</h3>
+	<div class="table-responsive"><table class="table table-bordered table-hover table-striped table-text-center"><thead><tr><th style="width: 5em;">#</th><th style="width: 14em;">用户名</th><th style="width: 50em;">格言</th><th style="width: 5em;">Rating</th></tr></thead><tbody><tr><td>1</td><td><span class="uoj-username" data-rating="2361" data-link="true">fizzydavid</span></td><td>0w0</td><td>2361</td></tr><tr><td>2</td><td><span class="uoj-username" data-rating="1985" data-link="true">eeeeeericKKK</span></td><td>汉中沃野如关中，四五百里烟蒙蒙。
+黄云连天夏麦熟，水稻漠漠吹秋风。</td><td>1985</td></tr><tr><td>3</td><td><span class="uoj-username" data-rating="1967" data-link="true">wzy</span></td><td>左边是肥宅，所以没有格言</td><td>1967</td></tr><tr><td>4</td><td><span class="uoj-username" data-rating="1927" data-link="true">diamond_duke</span></td><td></td><td>1927</td></tr><tr><td>5</td><td><span class="uoj-username" data-rating="1909" data-link="true">littlebear31925</span></td><td></td><td>1909</td></tr><tr><td>6</td><td><span class="uoj-username" data-rating="1878" data-link="true">tour1st</span></td><td>这个家伙很鸽，什么也没留下。</td><td>1878</td></tr><tr><td>7</td><td><span class="uoj-username" data-rating="1856" data-link="true">ljd</span></td><td></td><td>1856</td></tr><tr><td>8</td><td><span class="uoj-username" data-rating="1846" data-link="true">vipper</span></td><td>El Psy Congroo</td><td>1846</td></tr><tr><td>9</td><td><span class="uoj-username" data-rating="1842" data-link="true">D0zingbear</span></td><td>苟利国家生死以，岂因祸福趋避之</td><td>1842</td></tr><tr><td>10</td><td><span class="uoj-username" data-rating="1831" data-link="true">leo020828</span></td><td>不做资本主义的走狗！不做美帝国主义的野心狼！不做人民的罪人！让社会主义的红旗在地球上飘扬！</td><td>1831</td></tr></tbody></table></div>	<div class="text-center">
+		<a href="/ranklist">查看全部</a>
+	</div>
+</div>
+<div>
+	<h3>切题排行榜</h3>
+	<div class="table-responsive"><table class="table table-bordered table-hover table-striped table-text-center"><thead><tr><th style="width: 5em;">#</th><th style="width: 14em;">用户名</th><th style="width: 50em;">格言</th><th style="width: 5em;">题数</th></tr></thead><tbody><tr><td>1</td><td><span class="uoj-username" data-rating="1967" data-link="true">wzy</span></td><td>左边是肥宅，所以没有格言</td><td>290</td></tr><tr><td>2</td><td><span class="uoj-username" data-rating="1627" data-link="true">lqs2015</span></td><td>楼上太假了</td><td>289</td></tr><tr><td>3</td><td><span class="uoj-username" data-rating="1927" data-link="true">diamond_duke</span></td><td></td><td>252</td></tr><tr><td>4</td><td><span class="uoj-username" data-rating="1485" data-link="true">20150332</span></td><td>努力做最好的自己</td><td>214</td></tr><tr><td>5</td><td><span class="uoj-username" data-rating="1652" data-link="true">nickluo</span></td><td></td><td>191</td></tr><tr><td>6</td><td><span class="uoj-username" data-rating="1787" data-link="true">superay</span></td><td>楼上上上上上太假了</td><td>162</td></tr><tr><td>7</td><td><span class="uoj-username" data-rating="1500" data-link="true">root</span></td><td></td><td>135</td></tr><tr><td>8</td><td><span class="uoj-username" data-rating="2361" data-link="true">fizzydavid</span></td><td>0w0</td><td>128</td></tr><tr><td>9</td><td><span class="uoj-username" data-rating="1625" data-link="true">IcePrincess_1968</span></td><td>I'll always miss you like a darling.</td><td>123</td></tr><tr><td>10</td><td><span class="uoj-username" data-rating="1802" data-link="true">waxberry</span></td><td></td><td>119</td></tr></tbody></table></div>	<div class="text-center">
+		<a href="/acranklist">查看全部</a>
+	</div>
+</div>
+			</div>
+						<div class="uoj-footer">
+				<p>
+					<a href="https://acm.nflsoj.com/?locale=zh-cn"><img src="/pictures/lang/cn.png" alt="中文" /></a>
+					<a href="https://acm.nflsoj.com/?locale=en"><img src="/pictures/lang/gb.png" alt="English" /></a>
+				</p>
+
+				<ul class="list-inline">
+					<li class="list-inline-item">Nanjing Foreign Language School Algorithms Club</li>
+									</ul>
+
+				<p><a href="https://github.com/UniversalOJ/UOJ-System">基于开源项目 UOJ</a> | <a href="/devlog">开发日志</a></p>
+				<p><a href="http://beian.miit.gov.cn">苏ICP备15035938号-1</a> All rights reserved. </p>
+				<p>Server time: 2020-03-23 21:19:55</p>
+			</div>
+					</div>
+	</body>
+</html>
